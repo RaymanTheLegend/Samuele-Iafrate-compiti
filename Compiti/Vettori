@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Numeri Casuali in un Array</title>
+    </head>
+    <body>
+        <h2>Risultati</h2>
+
+        <div class="box" id="array"></div>
+        <div class="box" id="media"></div>
+        <div class="box" id="massimo"></div>
+        <div class="box" id="minimo"></div>
+        <div class="box" id="pariMaggiore50"></div>
+
+        <script>
+            let array = [];
+            for (let n = 0; n < 100; n++) {
+                array.push(Math.floor((Math.random() * 200 - 100)));
+            }
+
+            let somma = 0;
+            for (let posizione of array) {
+                somma += posizione;
+            }
+
+            let media = somma / array.length;
+
+            let massimo = Math.max(...array);
+            let minimo = Math.min(...array);
+
+            let pariMaggiori50 = array
+                .map(x => Math.round(x))
+                .filter(x => x > 50 && x % 2 === 0);
+            
+            document.getElementById("array").innerHTML = "<b>Array completo:</b> <br>" + array;
+            document.getElementById("media").innerHTML = "<b>Media:</b> " + media;
+            document.getElementById("massimo").innerHTML = "<b>Massimo:</b> " + massimo;
+            document.getElementById("minimo").innerHTML = "<b>Minimo:</b> " + minimo;
+            document.getElementById("pariMaggiore50").innerHTML = "<b>Pari e maggiore di 50:</b> " + pariMaggiori50;
+        </script>
+    </body>
+</html>
