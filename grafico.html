@@ -1,0 +1,49 @@
+<html>
+<body>
+
+<canvas id="myCanvas" width="500" height="250" style="border:1px solid #d3d3d3;">
+</canvas>
+
+<script>
+const coordinateGrafico = [{x: 42, y: 250}, 
+                           {x: 0, y: 212},
+                           {x: 500, y: 212}];
+const coordinate = [{x: 70, y: 113},
+                    {x: 108, y: 131},
+                    {x: 146, y: 122},
+                    {x: 184, y: 122},
+                    {x: 222, y: 113},
+                    {x: 260, y: 85},
+                    {x: 298, y: 76},
+                    {x: 336, y: 85},
+                    {x: 374, y: 131},
+                    {x: 412, y: 122},
+                    {x: 450, y: 85},
+                    {x: 488, y: 85}]; //y = (9 pixel = 1 femminidio), x = (38 pixel = 1 mese)                    
+
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var ctx1 = c.getContext("2d");
+
+ctx.moveTo(42,0);
+for(i = 0; i < coordinateGrafico.length; i++){
+    ctx.lineTo(coordinateGrafico[i].x, coordinateGrafico[i].y);
+}
+ctx.moveTo(0,60);
+ctx.lineTo(500, 60);
+ctx.lineWidth = 2;
+ctx.stroke();
+ctx.font = "30px comic sans";
+ctx.fillStyle = "Dark gray";
+ctx.fillText("Numero di femmicidi annuale", 60, 45);
+
+ctx1.moveTo(42,212);
+for(i = 0; i < coordinate.length; i++){
+    ctx1.lineTo(coordinate[i].x, coordinate[i].y);
+}
+ctx1.stroke();
+
+</script>
+
+</body>
+</html>
