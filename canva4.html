@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<body>
+<h1>Numero femminicidi annuali</h1>
+<canvas id="myChart" style="width:500px;max-width:500px"></canvas>
+
+<script>
+var mesi = ["Gen","Feb","Mar","Apr","Mag","Giu","Lug","Ago","Set","Ott","Nov","Dic"];
+var valori = [11, 9, 10, 10, 11, 13, 14, 13, 9, 10, 13, 13];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: mesi,
+    datasets: [{
+      backgroundColor: "red",
+      data: valori
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: 0, max: 20}}]
+    }
+  }
+});
+</script>
+
+</body>
+</html>
